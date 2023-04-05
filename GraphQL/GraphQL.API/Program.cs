@@ -1,6 +1,7 @@
 using GraphiQl;
 using GraphQL.Data;
 using GraphQL.Data.Repository;
+using GraphQL.GraphQL;
 using GraphQL.Server;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
@@ -20,7 +21,7 @@ builder.Services.AddDbContext<AppDbContext>(x => x.UseSqlServer(connectionString
 builder.Services.AddScoped<CoursesRepository>();
 
 // GraphQL
-builder.Services.AddGraphQL().AddSystemTextJson();
+builder.Services.AddGraphQL(builder => builder.AddSystemTextJson());
 
 var app = builder.Build();
 
@@ -41,7 +42,7 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 // GraphQL
-//app.UseGraphQL<schemaCLass>();
+app.UseGraphQL<AppSchema>();
 app.UseGraphQLGraphiQL("/ui/graphql");
 
 app.UseAuthorization();
