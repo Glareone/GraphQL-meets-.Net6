@@ -19,6 +19,7 @@ namespace GraphQL.Data.Repository
         {
             return _context.Courses.FirstOrDefault(n => n.Id == id);
         }
+
         public Course AddCourse(Course course)
         {
             _context.Courses.Add(course);
