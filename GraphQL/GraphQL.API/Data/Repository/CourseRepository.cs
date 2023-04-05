@@ -15,7 +15,7 @@ namespace GraphQL.Data.Repository
             return _context.Courses.ToList();
         }
 
-        public Course GetCourseById(int id)
+        public Course? GetCourseById(int id)
         {
             return _context.Courses.FirstOrDefault(n => n.Id == id);
         }
@@ -30,10 +30,14 @@ namespace GraphQL.Data.Repository
         public Course UpdateCourse(int id, Course course)
         {
             var _course = _context.Courses.FirstOrDefault(n => n.Id == id);
-            _course.Name = course.Name;
-            _course.Description = course.Description;
-            _course.Review = course.Review;
-            _course.DateUpdated = DateTime.Now;
+            if (_course != null)
+            {
+                _course.Name = course.Name;
+                _course.Description = course.Description;
+                _course.Review = course.Review;
+                _course.DateUpdated = DateTime.Now;
+            }
+
             _context.SaveChanges();
 
             return course;
@@ -42,7 +46,7 @@ namespace GraphQL.Data.Repository
         public void DeleteCourse(int id)
         {
             var course = _context.Courses.FirstOrDefault(n => n.Id == id);
-            _context.Courses.Remove(course);
+            if (course != null) _context.Courses.Remove(course);
             _context.SaveChanges();
         }
     }

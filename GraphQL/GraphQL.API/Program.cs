@@ -1,7 +1,7 @@
-using GraphiQl;
 using GraphQL.Data;
 using GraphQL.Data.Repository;
 using GraphQL.GraphQL;
+using GraphQL.GraphQL.Queries;
 using GraphQL.Server;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
@@ -19,9 +19,11 @@ builder.Services.AddSwaggerGen(c =>
 var connectionString = builder.Configuration.GetConnectionString("DatabaseConnectionString");
 builder.Services.AddDbContext<AppDbContext>(x => x.UseSqlServer(connectionString));
 builder.Services.AddScoped<CoursesRepository>();
+builder.Services.AddScoped<CourseQuery>();
+builder.Services.AddScoped<AppSchema>();
 
 // GraphQL
-builder.Services.AddGraphQL(builder => builder.AddSystemTextJson());
+builder.Services.AddGraphQL().AddSystemTextJson();
 
 var app = builder.Build();
 
