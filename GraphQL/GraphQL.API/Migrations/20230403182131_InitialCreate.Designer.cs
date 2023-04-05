@@ -25,7 +25,7 @@ namespace GraphQL.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("GraphQL.Data.Models.Course", b =>
+            modelBuilder.Entity("GraphQL.API.Data.Models.Course", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
