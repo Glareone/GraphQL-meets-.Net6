@@ -4,6 +4,8 @@
 [Explanation from IBM](https://www.youtube.com/watch?v=PTfZcN20fro)  
 **REST**: CRUD based on resources. It provides complete set of operations over your data. But as a drawback in complex situations may send you over-fetched or under-fetched data.  
 **GraphQL**: To fetch or mutate data using exact one request. Schema+resolver you created will take care of the rest. Good in complex data situations or in situations when you want to reduce the throughput because of over-fetching.  
+  
+**GraphQL** also does not dicrate patterns or project structure and could be introduced on top of already existing architecture.  
 
 
 ## General Information
