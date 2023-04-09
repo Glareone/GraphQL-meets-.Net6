@@ -1,4 +1,5 @@
 ﻿using GraphQL.Data.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace GraphQL.Data.Repository
 {
@@ -12,7 +13,7 @@ namespace GraphQL.Data.Repository
 
         public IEnumerable<Course> GetAllCourses()
         {
-            return _context.Courses.ToList();
+            return _context.Courses.Include(c => c.Reviews).ToList();
         }
 
         public Course? GetCourseById(int id)
