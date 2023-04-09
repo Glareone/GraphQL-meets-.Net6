@@ -26,10 +26,10 @@ public sealed class CourseMutation: ObjectGraphType
         
         Field<CourseType>(
             "updateCourse",
-            "is used to update an existing course",
+            "Is used to update an existing course",
             arguments: new QueryArguments(
-                new QueryArgument<NonNullGraphType<IdGraphType>>
-                    { Name = "id", Description = "Id of the course you want to update" },
+                new QueryArgument<NonNullGraphType<IntGraphType>>
+                    { Name = "id", Description = "Id of the course you want to update. Should be int" },
                 new QueryArgument<NonNullGraphType<CourseInputType>>
                     { Name = "course", Description = "Updated course Values" }
             ),
@@ -41,5 +41,14 @@ public sealed class CourseMutation: ObjectGraphType
                 return repository.UpdateCourse(id, course);
             }
         );
+        
+        Field<BooleanGraphType>()
+            .Name("deleteCourse")
+            .Description("Is used to delete course by course Id")
+            .Argument<NonNullGraphType<IntGraphType>>(Name = "id", Description = "course Id. Input should has Int type")
+            .Resolve(context => {
+                    var id = context.GetArgument<int>("id");
+                    return repository.DeleteCourse(id);
+            });
     }
 }
