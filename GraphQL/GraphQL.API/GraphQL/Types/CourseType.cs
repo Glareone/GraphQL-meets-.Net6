@@ -3,7 +3,7 @@ using GraphQL.Types;
 
 namespace GraphQL.GraphQL.Types;
 
-public class CourseType: ObjectGraphType<Course>
+public sealed class CourseType: ObjectGraphType<Course>
 {
     public CourseType()
     {
