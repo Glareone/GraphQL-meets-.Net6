@@ -23,9 +23,28 @@ namespace GraphQL.Data.Repository
 
         public Course AddCourse(Course course)
         {
-            _context.Courses.Add(course);
+            Course newCourse = new()
+            {
+                Name = course.Name,
+                Description = course.Description,
+                DateAdded = course.DateAdded,
+                DateUpdated = course.DateUpdated,
+            };
+            
+            _context.Courses.Add(newCourse);
             _context.SaveChanges();
-            return course;
+
+            var reviews = course.Reviews.Select(r => new Review
+            {
+                Rate = r.Rate,
+                Comment = r.Comment,
+                CourseId = newCourse.Id
+            }).ToList();
+            
+            _context.Reviews.AddRange(reviews);
+            
+            _context.SaveChanges();
+            return newCourse;
         }
 
         public Course? UpdateCourse(int id, Course updatedCourse)
