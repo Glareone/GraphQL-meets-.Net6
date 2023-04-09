@@ -30,6 +30,8 @@
 ![mutation](https://user-images.githubusercontent.com/4239376/230778470-c1a5c4a1-e115-44d0-ae97-62f9a2e288c5.png)
 ![single update](https://user-images.githubusercontent.com/4239376/230780232-0e2214d2-19aa-4527-bc27-a2c583cdc50d.png)
 ![delete](https://user-images.githubusercontent.com/4239376/230783394-9f9a4f95-4827-4233-b3b9-2410591afd6e.png)
+#### Mutations for relational data
+![add course with reviews](https://user-images.githubusercontent.com/4239376/230793819-2dbe7a7c-7143-4735-9bc1-43726de39dc2.png)
 
 
 
