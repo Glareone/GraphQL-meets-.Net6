@@ -42,8 +42,9 @@ namespace GraphQL.Data.Repository
             }).ToList();
             
             _context.Reviews.AddRange(reviews);
-            
             _context.SaveChanges();
+            
+            newCourse.Reviews = reviews;
             return newCourse;
         }
 
