@@ -10,5 +10,7 @@ namespace GraphQL.Data
         }
 
         public DbSet<Course> Courses { get; set; }
+        
+        public DbSet<Review> Reviews { get; set; }
     }
 }

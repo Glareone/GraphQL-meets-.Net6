@@ -9,8 +9,10 @@ namespace GraphQL.Data.Models
 
         public string Name { get; set; }
         public string Description { get; set; }
-        public int Review { get; set; }
         public DateTime DateAdded { get; set; }
         public DateTime DateUpdated { get; set; }
+        
+        // Relations
+        public IEnumerable<Review> Reviews { get; set; }
     }
 }
