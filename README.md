@@ -24,6 +24,8 @@
 #### Queries (2 options to write query):
 ![query](https://user-images.githubusercontent.com/4239376/230211775-c5fa92e9-66d2-4ebc-90c1-1ec54461e1f1.png)
 ![image](https://user-images.githubusercontent.com/4239376/230778518-958dfb5f-0334-4729-a426-2bbc5f61aea0.png)
+#### Query relational data:
+![image](https://user-images.githubusercontent.com/4239376/230792849-1b994267-b9b9-4553-a527-78d03578736e.png)
 #### Mutations (in my example you need to define what you expect in output because I return back Course from Repository):
 ![mutation](https://user-images.githubusercontent.com/4239376/230778470-c1a5c4a1-e115-44d0-ae97-62f9a2e288c5.png)
 ![single update](https://user-images.githubusercontent.com/4239376/230780232-0e2214d2-19aa-4527-bc27-a2c583cdc50d.png)
