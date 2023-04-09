@@ -4,7 +4,7 @@ using GraphQL.Types;
 
 namespace GraphQL.GraphQL.Queries;
 
-public class CourseQuery: ObjectGraphType
+public sealed class CourseQuery: ObjectGraphType
 {
     public CourseQuery(CoursesRepository coursesRepository)
     {
