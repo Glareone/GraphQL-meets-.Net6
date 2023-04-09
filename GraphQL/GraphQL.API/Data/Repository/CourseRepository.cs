@@ -38,7 +38,7 @@ namespace GraphQL.Data.Repository
 
             course.Name = updatedCourse.Name;
             course.Description = updatedCourse.Description;
-            course.Review = updatedCourse.Review;
+            //course.Review = updatedCourse.Review;
             course.DateUpdated = DateTime.Now;
                 
             _context.SaveChanges();
