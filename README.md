@@ -21,5 +21,10 @@
 ![image](https://user-images.githubusercontent.com/4239376/230195915-daae35c3-08c6-4c69-af02-0d6fdc6d86cd.png)
 
 ## Working app primitives
-![image](https://user-images.githubusercontent.com/4239376/230211775-c5fa92e9-66d2-4ebc-90c1-1ec54461e1f1.png)
+#### Queries (2 options to write query):
+![query](https://user-images.githubusercontent.com/4239376/230211775-c5fa92e9-66d2-4ebc-90c1-1ec54461e1f1.png)
+![image](https://user-images.githubusercontent.com/4239376/230778518-958dfb5f-0334-4729-a426-2bbc5f61aea0.png)
+#### Mutations (in my example you need to define what you expect in output because I return back Course from Repository):
+![mutation](https://user-images.githubusercontent.com/4239376/230778470-c1a5c4a1-e115-44d0-ae97-62f9a2e288c5.png)
+
 
